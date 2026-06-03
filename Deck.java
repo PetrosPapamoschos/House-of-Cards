@@ -11,7 +11,7 @@ public class Deck {
 
     private void initializeDeck() {
         for (int suit = 0; suit < 4; suit++) {
-            for (int rank = 0; rank < 13; rank++) {
+            for (int rank = 2; rank < 15; rank++) {
                 cards.add(new Card(suit, rank));
             }
         }
