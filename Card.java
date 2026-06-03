@@ -53,6 +53,9 @@ public class Card{
 
         return rankName + " of " + suitName;
     }
+//    public int getRank() {
+//        return rank;
+//    }
     // public int getSuit() {
     //     return suit;
     // }
