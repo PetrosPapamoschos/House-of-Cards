@@ -53,12 +53,4 @@ public class House {
         return "House " + houseNumber + " has a score of " + houseScore;
     }
 
-    public void initializeHouses() {
-        for (int i = 0; i < 4; i++) {
-            House house = new House(i + 1);
-            //house.setHouseNumber(i + 1);
-            //house.resetHouseScore();
-        }
-    }
-
 }
