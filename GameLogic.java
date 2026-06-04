@@ -48,11 +48,9 @@ public class GameLogic {
         System.out.println("Meow");
 
     }
+}
 
 
-        
-    }
-   
 
     public static boolean areAllHousesUnavailable() {
         for (House house : HOUSES) {
@@ -64,6 +62,7 @@ public class GameLogic {
     }
 
 
+   
     public static int randomNumberGenerator(int min, int max) {
         return new Random().nextInt((max - min) + 1) + min;
     }
@@ -88,11 +87,11 @@ public class GameLogic {
         } else if (newHouseScore == 31) {
             return 31; //Player takes points
         } else {
-            return -1; //House will be closed 
+            return -1; //House will be unavailable
         }
     }
 
-    public void addCardValueToHouseScore(House houseNumber, Card card) {
+    public static void addCardValueToHouseScore(House houseNumber, Card card) {
         int cardValue = card.getValue();
         int newHouseScore = houseNumber.getHouseScore() + cardValue;
         houseNumber.setHouseScore(newHouseScore);
@@ -110,5 +109,7 @@ public class GameLogic {
             }
         }
     }
-
 }
+
+   
+
