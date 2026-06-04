@@ -30,7 +30,7 @@ public class GameLogic {
         printAllHouses();
         curCard = drawCard(deck);
         System.out.println("Card Drawn: " + curCard.getCardName() + ". Which house do you want to place the card in?");
-        while((houseState == -1 || houseState == 31) && !areAllHousesUnavailable()){
+        do{
         houseChoice = SCAN.nextInt();
         houseState = checkHouseScore(HOUSES[houseChoice - 1], curCard);
         if (houseState == -1) {
@@ -44,7 +44,7 @@ public class GameLogic {
             HOUSES[houseChoice - 1].setHouseScore(houseState);
             System.out.println("Card added to House " + houseChoice + ". Current House Score: " + HOUSES[houseChoice - 1].getHouseScore());
         }
-        }
+        }while(!(houseState == -1 || houseState == 31) && areAllHousesUnavailable());
         System.out.println("Meow");
 
     }
