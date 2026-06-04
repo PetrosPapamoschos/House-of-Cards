@@ -11,6 +11,9 @@ public class Player{
     public int getTotalScore(){
         return totalScore;
     }
+    public void resetScore(){
+        totalScore = 0;
+    }
     public String getName(){
         return playerName;
     }

@@ -53,6 +53,11 @@ public class Card{
 
         return rankName + " of " + suitName;
     }
+
+    @Override
+    public String toString() {
+        return getCardName();
+    }
 //    public int getRank() {
 //        return rank;
 //    }

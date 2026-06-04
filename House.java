@@ -14,28 +14,40 @@ public class House {
         this.isHouseClosed = false;
     }
 
-    
     public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
     }
+
     public void setHouseScore(int houseScore) {
         this.houseScore = houseScore;
+    }
+
+    public void resetHouseScore() {
+        this.houseScore = 0;
+        this.cardsInHouse.clear();
     }
 
     public int getHouseScore() {
         return houseScore;
     }
+
     public int getHouseNumber() {
         return houseNumber;
     }
+
     public boolean getIsHouseClosed() {
         return isHouseClosed;
     }
-    public List<Card> getCardsInHouse(){
-        return cardsInHouse;
+
+    public void setHouseClosed(boolean houseClosed) {
+        this.isHouseClosed = houseClosed;
     }
 
-    public int calculateHouseScore(int houseNumber, int houseScore, ArrayList<Card> cardsInHouse) { 
+    public List<Card> getCardsInHouse() {
+        return new ArrayList<Card>(cardsInHouse);
+    }
+
+    public int calculateHouseScore(int houseNumber, int houseScore, ArrayList<Card> cardsInHouse) {
         for (Card card : cardsInHouse) {
             houseScore += card.getValue();
         }
@@ -46,10 +58,7 @@ public class House {
         cardsInHouse.add(card);
     }
 
-//    public void resetHouseScore() {
-//        this.houseScore = 0;
-//    }
-    public void closeHouse(int houseNumber) {
+    public void closeHouse() {
         this.isHouseClosed = true;
     }
 
@@ -57,5 +66,4 @@ public class House {
     public String toString() {
         return "House " + houseNumber + " has a score of " + houseScore;
     }
-
 }
