@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +14,7 @@ public class House {
         this.isHouseClosed = false;
     }
 
+    
     public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
     }
@@ -30,6 +30,9 @@ public class House {
     }
     public boolean getIsHouseClosed() {
         return isHouseClosed;
+    }
+    public List<Card> getCardsInHouse(){
+        return cardsInHouse;
     }
 
     public int calculateHouseScore(int houseNumber, int houseScore, ArrayList<Card> cardsInHouse) { 
