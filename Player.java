@@ -3,8 +3,8 @@ public class Player{
     public Player(){
         totalScore = 0;
     }
-    public void addScore(int points){
-        totalScore += points;
+    public void addScore(){
+        totalScore = totalScore + 100;
     }
     public int getTotalScore(){
         return totalScore;
