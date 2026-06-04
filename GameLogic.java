@@ -10,15 +10,15 @@ public class GameLogic {
     public static void main(String[] args) {
         GameLogic game = new GameLogic();
         game.initializeHouses(HOUSE_COUNT);
+        
     }
    
-
     public static int randomNumberGenerator(int min, int max) {
         return new Random().nextInt((max - min) + 1) + min;
     }
     
     public Card drawCard(Deck cards) { //deck
-        int cardIndex = randomNumberGenerator(1, cards.getSize() - 1); // Generate a random index for the card to draw
+        int cardIndex = randomNumberGenerator(0, cards.getSize() - 1); // Generate a random index for the card to draw
         Card drawnCard = cards.getCard(cardIndex);
         cards.removeCard(cardIndex); // Remove the drawn card from the deck
         return drawnCard;
@@ -37,7 +37,7 @@ public class GameLogic {
         } else if (newHouseScore == 31) {
             return 31; //Player takes points
         } else {
-            return -1; //House will be closed 
+            return -1; //House will be unavailable
         }
     }
 
@@ -52,12 +52,6 @@ public class GameLogic {
             HOUSES[i] = new House(i + 1);
         }
     }
-    public void printAllHouses(){
-        for (House house : HOUSES) {
-            if (house != null) {
-                System.out.println("House(" + house.getHouseNumber() + "), Score:" + house.getHouseScore());
-            }
-        }
-    }
+   
 
 }
