@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class House {
         this.cardsInHouse = new ArrayList<Card>();
         this.isHouseClosed = false;
     }
+
     public void setHouseNumber(int houseNumber) {
         this.houseNumber = houseNumber;
     }
